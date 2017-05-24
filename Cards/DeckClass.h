@@ -29,6 +29,8 @@ public:
 	//Member functions
 	void Suffle(int times = 1);
 	Card DrawCard();
+	void Print();
+	bool IsEmpty();
 };
 
 

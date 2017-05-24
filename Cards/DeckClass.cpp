@@ -1,6 +1,7 @@
 #include "DeckClass.h"
 
 #include <algorithm>
+#include <iostream>
 
 //Building standard unshuffled deck
 Deck::Deck()
@@ -54,5 +55,17 @@ Card Deck::DrawCard()
 		return t;
 	}
 	//return undefined behavior
+}
+
+//Print deck in console
+void Deck::Print()
+{
+	std::cout << "Cards left: " << cards.size() << std::endl;
+}
+
+// Quick check of emptiness of deck
+bool Deck::IsEmpty()
+{
+	return cards.empty();
 }
 

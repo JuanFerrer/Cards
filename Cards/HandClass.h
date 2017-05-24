@@ -29,7 +29,7 @@ public:
 	//Member functions
 	void IncludeCard(const Card);
 	void SortHand(bool(*comparerAlg)(Card, Card));
-	void PrintHand();
+	void Print();
 };
 
 #endif // !_HAND_H_

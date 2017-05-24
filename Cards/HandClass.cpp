@@ -37,7 +37,7 @@ void Hand::SortHand(bool(*comparerAlg)(Card, Card))
 }
 
 //Print hand in console
-void Hand::PrintHand()
+void Hand::Print()
 {
 	std::cout << "Current hand:\n\n";
 	for (int i = 0; i < (signed)cards.size(); i++)
