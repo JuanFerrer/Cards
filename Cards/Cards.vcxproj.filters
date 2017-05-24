@@ -15,24 +15,24 @@
     </Filter>
   </ItemGroup>
   <ItemGroup>
-    <ClCompile Include="HandClass.cpp">
+    <ClCompile Include="src\CardClass.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="DeckClass.cpp">
+    <ClCompile Include="src\DeckClass.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="CardClass.cpp">
+    <ClCompile Include="src\HandClass.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
-    <ClInclude Include="CardClass.h">
+    <ClInclude Include="src\DeckClass.h">
       <Filter>Header Files</Filter>
     </ClInclude>
-    <ClInclude Include="DeckClass.h">
+    <ClInclude Include="src\HandClass.h">
       <Filter>Header Files</Filter>
     </ClInclude>
-    <ClInclude Include="HandClass.h">
+    <ClInclude Include="src\CardClass.h">
       <Filter>Header Files</Filter>
     </ClInclude>
   </ItemGroup>
