@@ -12,6 +12,7 @@ private:
 
 	std::random_device rd;	//Random device
 	std::mt19937 mt;		//Mersenne Twister
+	bool isShuffled;		// Wheter the deck has been shuffled
 
 public:
 	Deck();
@@ -30,7 +31,8 @@ public:
 	void Suffle(int times = 1);
 	Card DrawCard();
 	void Print();
-	bool IsEmpty();
+	bool IsEmpty() { return cards.empty(); }
+	bool IsShuffled() { return isShuffled; }
 };
 
 

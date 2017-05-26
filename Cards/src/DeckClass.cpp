@@ -42,6 +42,7 @@ void Deck::Suffle(int times)
 	{
 		std::shuffle(cards.begin(), cards.end(), mt);
 	}
+	isShuffled = true;
 }
 
 //Return copy of card at the top
@@ -61,11 +62,5 @@ Card Deck::DrawCard()
 void Deck::Print()
 {
 	std::cout << "Cards left: " << cards.size() << std::endl;
-}
-
-// Quick check of emptiness of deck
-bool Deck::IsEmpty()
-{
-	return cards.empty();
 }
 

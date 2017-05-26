@@ -16,6 +16,8 @@ int main()
 	do
 	{
 		system("cls");
+		deck->Print();
+		hand->Print();
 		cout << "Do you want to draw, suffle or quit? (d/s/q)";
 		cin >> optionSelected;
 		while (optionSelected != 'd' &&
@@ -32,11 +34,7 @@ int main()
 		else
 		{
 			hand->IncludeCard(deck->DrawCard());
-		}
-
-		deck->Print();
-		hand->Print();
-		system("pause");
+		}\
 	} while (optionSelected != 'q');
 	return 0;
 }
