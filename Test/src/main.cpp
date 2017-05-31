@@ -1,14 +1,15 @@
 #include "DeckClass.h"
-#include "CardClass.h"
+#include "SpanishCardClass.h"
 #include "HandClass.h"
 
 #include <iostream>
 
 using namespace std;
+using namespace cards;
 
 int main()
 {
-	Deck* deck = new Deck();
+	Deck* deck = new Deck(CardType::Spanish);
 	Hand* hand = new Hand();
 
 	char optionSelected;
