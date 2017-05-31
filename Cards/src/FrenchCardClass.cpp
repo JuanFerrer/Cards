@@ -1,4 +1,4 @@
-#include "CardClass.h"
+#include "FrenchCardClass.h"
 
 #include <iostream>
 #include <string>
@@ -8,16 +8,13 @@ namespace cards
 	{
 		SetSuit(newSuit);
 		SetRank(newRank);
+		MType = CardType::French;
 	}
 
 	Card::Card(const Card &rhs)
 	{
 		SetSuit(rhs.GetSuit());
 		SetRank(rhs.GetRank());
-	}
-
-	Card::~Card()
-	{
 	}
 
 	std::string Card::GetSuitString() const

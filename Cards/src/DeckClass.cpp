@@ -6,11 +6,13 @@
 namespace cards
 {
 	//Building standard unshuffled deck
-	Deck::Deck()
+	Deck::Deck(CardType type)
 	{
-		for (int j = 0; j < 4; j++)
+		int suits = type == CardType::French? 4 : 4;
+		int ranks = type == CardType::French ? 13 : 12;
+		for (int j = 0; j < suits; j++)
 		{
-			for (int i = 0; i < 13; i++)
+			for (int i = 0; i < ranks; i++)
 			{
 				cards.push_back(Card(static_cast<Rank>(i), static_cast<Suit>(j)));
 			}

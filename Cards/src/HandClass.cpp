@@ -42,9 +42,11 @@ namespace cards
 	void Hand::Print()
 	{
 		std::cout << "Current hand:\n\n";
+		char* conjunction = "";
 		for (int i = 0; i < (signed)cards.size(); i++)
 		{
-			std::cout << cards.at(i).GetRankString() << " of " << cards.at(i).GetSuitString() << std::endl;
+			conjunction = cards.at(i).GetType() == CardType::French ? " of " : " de ";
+			std::cout << cards.at(i).GetRankString() << conjunction << cards.at(i).GetSuitString() << std::endl;
 		}
 	}
 }

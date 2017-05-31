@@ -1,7 +1,7 @@
 #ifndef _HAND_H_
 #define _HAND_H_
 
-#include "CardClass.h"
+#include "FrenchCardClass.h"
 #include <vector>
 
 namespace cards

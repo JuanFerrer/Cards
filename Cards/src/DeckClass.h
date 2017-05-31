@@ -1,7 +1,7 @@
 #ifndef _DECK_H_
 #define _DECK_H_
 
-#include "CardClass.h"
+#include "FrenchCardClass.h"
 #include <vector>
 #include <random>
 
@@ -17,7 +17,7 @@ namespace cards
 		bool isShuffled;		// Wheter the deck has been shuffled
 
 	public:
-		Deck();
+		Deck(CardType);
 		Deck(std::vector<Card>);
 		~Deck();
 

@@ -21,7 +21,10 @@
     <ClCompile Include="src\HandClass.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="src\CardClass.cpp">
+    <ClCompile Include="src\FrenchCardClass.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="src\SpanishCardClass.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
   </ItemGroup>
@@ -32,10 +35,13 @@
     <ClInclude Include="src\HandClass.h">
       <Filter>Header Files</Filter>
     </ClInclude>
-    <ClInclude Include="src\CardClass.h">
+    <ClInclude Include="src\ICardClass.h">
       <Filter>Header Files</Filter>
     </ClInclude>
-    <ClInclude Include="src\ICardClass.h">
+    <ClInclude Include="src\FrenchCardClass.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="src\SpanishCardClass.h">
       <Filter>Header Files</Filter>
     </ClInclude>
   </ItemGroup>

@@ -110,15 +110,17 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
-    <ClCompile Include="src\CardClass.cpp" />
+    <ClCompile Include="src\FrenchCardClass.cpp" />
     <ClCompile Include="src\DeckClass.cpp" />
     <ClCompile Include="src\HandClass.cpp" />
+    <ClCompile Include="src\SpanishCardClass.cpp" />
   </ItemGroup>
   <ItemGroup>
-    <ClInclude Include="src\CardClass.h" />
+    <ClInclude Include="src\FrenchCardClass.h" />
     <ClInclude Include="src\DeckClass.h" />
     <ClInclude Include="src\HandClass.h" />
     <ClInclude Include="src\ICardClass.h" />
+    <ClInclude Include="src\SpanishCardClass.h" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">

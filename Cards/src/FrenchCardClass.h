@@ -21,7 +21,7 @@ namespace cards
 	public:
 		Card(Rank, Suit);
 		Card(const Card&);
-		~Card();
+		~Card() {}
 
 		//Member functions
 		std::string GetSuitString() const;

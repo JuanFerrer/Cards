@@ -5,6 +5,7 @@
 
 namespace cards
 {
+	enum CardType { French, Spanish };
 	enum class Suit : int;
 	enum class Rank : int;
 
@@ -14,14 +15,18 @@ namespace cards
 		Suit MSuit;
 		Rank MRank;
 
+	protected:
+		CardType MType;
+
 	public:
 		virtual ~ICard() {};
 
 		//Getters
-		virtual Suit GetSuit() const { return MSuit; };
-		virtual Rank GetRank() const { return MRank; };
-		virtual void SetSuit(const Suit& suit) { MSuit = suit; }
-		virtual void SetRank(const Rank& rank) { MRank = rank; };
+		Suit GetSuit() const { return MSuit; };
+		Rank GetRank() const { return MRank; };
+		void SetSuit(const Suit& suit) { MSuit = suit; }
+		void SetRank(const Rank& rank) { MRank = rank; };
+		CardType GetType() const { return MType; }
 
 		//Operators
 		virtual ICard& operator= (const ICard& rhs)
