@@ -32,13 +32,13 @@ Card & Card::operator=(const Card & rhs)
 	return *this;
 }
 
-std::ostream & operator<<(std::ostream &, Card card)
+std::ostream & operator<<(std::ostream &, ICard* card)
 {
 	std::string rankStr = "";
 	std::string suitStr = "";
 
-	Rank cardRank = card.GetRank();
-	Suit cardSuit = card.GetSuit();
+	Rank cardRank = card->GetRank();
+	Suit cardSuit = card->GetSuit();
 
 	switch (cardRank)
 	{

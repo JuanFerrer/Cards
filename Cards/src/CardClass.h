@@ -2,6 +2,7 @@
 #define _CARD_H_
 
 #include <ostream>
+#include "ICardClass.h"
 
 
 ///////////////////////////
@@ -10,18 +11,14 @@
 //                       //
 ///////////////////////////
 
-
-enum Suit { Spades, Clubs, Diamonds, Hearts };
-enum Rank { Ace, Two, Three, Four, Five, Six, Seven, Eight, Nine, Ten, Jack, Queen, King };
-
-
-class Card
+class Card : public ICard
 {
 private:
-	Suit MSuit;
-	Rank MRank;
 
 public:
+	enum Suit { Spades, Clubs, Diamonds, Hearts };
+	enum Rank { Ace, Two, Three, Four, Five, Six, Seven, Eight, Nine, Ten, Jack, Queen, King };
+
 	Card(Rank, Suit);
 	Card(const Card&);
 	~Card();
@@ -29,10 +26,12 @@ public:
 	//Getters
 	Suit GetSuit() const;
 	Rank GetRank() const;
+	void SetSuit() const;
+	void SetRank() const;
 
 	//Operators
 	Card& operator= (const Card &rhs);
-	friend std::ostream& operator<< (std::ostream&, Card card);
+	friend std::ostream& operator<< (std::ostream&, ICard* card);
 
 	//Member functions
 };
