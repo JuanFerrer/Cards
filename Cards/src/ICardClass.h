@@ -3,30 +3,42 @@
 
 #include <ostream>
 
-class ICard
+namespace cards
 {
+	enum class Suit : int;
+	enum class Rank : int;
 
-	virtual enum Suit;
-	virtual enum Rank;
+	class ICard
+	{
+	private:
+		Suit MSuit;
+		Rank MRank;
 
-private:
-	Suit MSuit;
-	Rank MRank;
+	public:
+		virtual ~ICard() {};
 
-public:
-	virtual ~ICard() {};
+		//Getters
+		virtual Suit GetSuit() const { return MSuit; };
+		virtual Rank GetRank() const { return MRank; };
+		virtual void SetSuit(const Suit& suit) { MSuit = suit; }
+		virtual void SetRank(const Rank& rank) { MRank = rank; };
 
-	//Getters
-	virtual Suit GetSuit() const = 0;
-	virtual Rank GetRank() const = 0;
+		//Operators
+		virtual ICard& operator= (const ICard& rhs)
+		{
+			if (this != &rhs)
+			{
+				MSuit = rhs.GetSuit();
+				MRank = rhs.GetRank();
+			}
+			return *this;
+		}
 
-	//Operators
-	virtual ICard& operator= (const ICard &rhs) = 0;
-	virtual friend std::ostream& operator<< (std::ostream&, ICard* card) = 0;
-
-	//Member functions
-};
-
+		//Member functions
+		virtual std::string GetSuitString() const = 0;
+		virtual std::string GetRankString() const = 0;
+	};
+}
 
 #endif // !_ICARD_H_
 

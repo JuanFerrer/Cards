@@ -11,30 +11,23 @@
 //                       //
 ///////////////////////////
 
-class Card : public ICard
+namespace cards
 {
-private:
+	enum class Suit : int { Spades, Clubs, Diamonds, Hearts };
+	enum class Rank :int { Ace, Two, Three, Four, Five, Six, Seven, Eight, Nine, Ten, Jack, Queen, King };
 
-public:
-	enum Suit { Spades, Clubs, Diamonds, Hearts };
-	enum Rank { Ace, Two, Three, Four, Five, Six, Seven, Eight, Nine, Ten, Jack, Queen, King };
+	class Card : public ICard
+	{
+	public:
+		Card(Rank, Suit);
+		Card(const Card&);
+		~Card();
 
-	Card(Rank, Suit);
-	Card(const Card&);
-	~Card();
-
-	//Getters
-	Suit GetSuit() const;
-	Rank GetRank() const;
-	void SetSuit() const;
-	void SetRank() const;
-
-	//Operators
-	Card& operator= (const Card &rhs);
-	friend std::ostream& operator<< (std::ostream&, ICard* card);
-
-	//Member functions
-};
+		//Member functions
+		std::string GetSuitString() const;
+		std::string GetRankString() const;
+	};
 
 
+}
 #endif // !_CARD_H_

@@ -115,10 +115,10 @@
     <ClCompile Include="src\HandClass.cpp" />
   </ItemGroup>
   <ItemGroup>
-    <ClInclude Include="ICardClass.h" />
     <ClInclude Include="src\CardClass.h" />
     <ClInclude Include="src\DeckClass.h" />
     <ClInclude Include="src\HandClass.h" />
+    <ClInclude Include="src\ICardClass.h" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">
