@@ -1,4 +1,12 @@
-// https://msdn.microsoft.com/en-us/library/bb384843.aspx
+// https://www.codementor.io/malortie/win32-app-load-apply-resources-to-window-c-cpp-visual-studio-du107jdb4
+
+// Header required to help detect window version
+#include <sdkddkver.h>
+
+// Macro used to reduce namespace pollution
+#ifndef WIN32_LEAN_AND_MEAN
+#define WIN32_LEAN_AND_MEAN
+#endif
 
 #include <windows.h>  
 #include <tchar.h>
@@ -59,15 +67,28 @@ int CALLBACK WinMain(_In_ HINSTANCE hInstance, _In_ HINSTANCE hPrevInstance, _In
 
 	if (!RegisterClassEx(&wcex))
 	{
-		MessageBox(NULL,
-			_T("Call to RegisterClassEx failed!"),
-			_T("Win32 Guided Tour"),
-			NULL);
+		//MessageBox(NULL,
+		//	_T("Call to RegisterClassEx failed!"),
+		//	_T("Win32 Guided Tour"),
+		//	NULL);
 
 		return 1;
 	}
 
-	auto hInst = hInstance; // Store instance handle in our global variable 
+	auto hInst = hInstance; // Store instance handle in our global variable
+
+	// Setup window initialization attributes.
+	CREATESTRUCT cs;
+	ZeroMemory(&cs, sizeof(cs));
+
+	cs.x = 0;	// Window X position
+	cs.y = 0;	// Window Y position
+	cs.cx = 640;	// Window width
+	cs.cy = 480;	// Window height
+	cs.hInstance = hInstance; // Window instance.
+	cs.lpszClass = wcex.lpszClassName;		// Window class name
+	cs.lpszName = szWindowClass;	// Window title
+	cs.style = WS_OVERLAPPEDWINDOW;		// Window style
 
 	// The parameters to CreateWindow explained:  
 	// szWindowClass: the name of the application  
@@ -79,21 +100,23 @@ int CALLBACK WinMain(_In_ HINSTANCE hInstance, _In_ HINSTANCE hPrevInstance, _In
 	// NULL: this application does not have a menu bar  
 	// hInstance: the first parameter from WinMain  
 	// NULL: not used in this application  
-	HWND hWnd = CreateWindow(
-		szWindowClass,
-		szTitle,
-		WS_OVERLAPPEDWINDOW,
-		CW_USEDEFAULT, CW_USEDEFAULT,
-		500, 100,
-		NULL,
-		NULL,
-		hInstance,
-		NULL
-		);
+	HWND hWnd = ::CreateWindowEx(
+		cs.dwExStyle,
+		cs.lpszClass,
+		cs.lpszName,
+		cs.style,
+		cs.x,
+		cs.y,
+		cs.cx,
+		cs.cy,
+		cs.hwndParent,
+		cs.hMenu,
+		cs.hInstance,
+		cs.lpCreateParams);
 
 	if (!hWnd)
 	{
-		MessageBox(NULL, _T("Call to CreateWindow failed!"), _T("Win32 Guided Tour"), NULL);
+		//MessageBox(NULL, _T("Call to CreateWindow failed!"), _T("Win32 Guided Tour"), NULL);
 		return 1;
 	}
 
