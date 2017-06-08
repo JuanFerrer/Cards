@@ -2,19 +2,22 @@
 
 #include <iostream>
 #include <string>
-namespace cards
+
+using namespace cards;
+namespace spanish
 {
 	Card::Card(Rank newRank, Suit newSuit)
 	{
 		SetSuit(newSuit);
 		SetRank(newRank);
-		MType = CardType::Spanish;
+		SetType(CardType::Spanish);
 	}
 
 	Card::Card(const Card &rhs)
 	{
 		SetSuit(rhs.GetSuit());
 		SetRank(rhs.GetRank());
+		SetType(rhs.GetType());
 	}
 
 	std::string Card::GetSuitString() const

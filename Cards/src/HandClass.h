@@ -1,12 +1,11 @@
 #ifndef _HAND_H_
 #define _HAND_H_
 
-#include "FrenchCardClass.h"
+#include "include.h"
 #include <vector>
 
 namespace cards
 {
-
 	class Hand
 	{
 	private:

@@ -1,6 +1,6 @@
-#include "DeckClass.h"
-#include "SpanishCardClass.h"
-#include "HandClass.h"
+#include "./src/include.h"
+#include "./src/DeckClass.h"
+#include "./src/HandClass.h"
 
 #include <iostream>
 

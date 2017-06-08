@@ -14,8 +14,6 @@ namespace cards
 	private:
 		Suit MSuit;
 		Rank MRank;
-
-	protected:
 		CardType MType;
 
 	public:
@@ -24,9 +22,10 @@ namespace cards
 		//Getters
 		Suit GetSuit() const { return MSuit; };
 		Rank GetRank() const { return MRank; };
-		void SetSuit(const Suit& suit) { MSuit = suit; }
-		void SetRank(const Rank& rank) { MRank = rank; };
 		CardType GetType() const { return MType; }
+		void SetSuit(const Suit& suit) { MSuit = suit; }
+		void SetRank(const Rank& rank) { MRank = rank; }
+		void SetType(const CardType& type) { MType = type; }
 
 		//Operators
 		virtual ICard& operator= (const ICard& rhs)

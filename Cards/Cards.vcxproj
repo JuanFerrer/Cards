@@ -120,6 +120,7 @@
     <ClInclude Include="src\DeckClass.h" />
     <ClInclude Include="src\HandClass.h" />
     <ClInclude Include="src\ICardClass.h" />
+    <ClInclude Include="src\include.h" />
     <ClInclude Include="src\SpanishCardClass.h" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />

@@ -1,5 +1,5 @@
-#ifndef _CARD_H_
-#define _CARD_H_
+#ifndef _SPANISH_CARD_H_
+#define _SPANISH_CARD_H_
 
 #include <ostream>
 #include "ICardClass.h"
@@ -14,12 +14,14 @@
 namespace cards
 {
 	enum class Suit : int { Bastos, Oros, Copas, Espadas };
-	enum class Rank :int { Uno, Dos, Tres, Cuatro, Cinco, Seis, Siete, Ocho, Nueve, Sota, Caballo, Rey };
-
-	class Card : public ICard
+	enum class Rank : int { Uno, Dos, Tres, Cuatro, Cinco, Seis, Siete, Ocho, Nueve, Sota, Caballo, Rey };
+}
+namespace spanish
+{
+	class Card : public cards::ICard
 	{
 	public:
-		Card(Rank, Suit);
+		Card(cards::Rank, cards::Suit);
 		Card(const Card&);
 		~Card() {}
 
@@ -27,7 +29,7 @@ namespace cards
 		std::string GetSuitString() const;
 		std::string GetRankString() const;
 	};
-
-
 }
-#endif // !_CARD_H_
+
+using namespace spanish;
+#endif // !_SPANISH_CARD_H_
