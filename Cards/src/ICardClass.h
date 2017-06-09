@@ -20,8 +20,8 @@ namespace cards
 		virtual ~ICard() {};
 
 		//Getters
-		Suit GetSuit() const { return MSuit; };
-		Rank GetRank() const { return MRank; };
+		Suit GetSuit() const { return MSuit; }
+		Rank GetRank() const { return MRank; }
 		CardType GetType() const { return MType; }
 		void SetSuit(const Suit& suit) { MSuit = suit; }
 		void SetRank(const Rank& rank) { MRank = rank; }
@@ -41,6 +41,11 @@ namespace cards
 		//Member functions
 		virtual std::string GetSuitString() const = 0;
 		virtual std::string GetRankString() const = 0;
+		virtual std::string GetCardName() const
+		{
+			char* preposition = MType == CardType::French ? " of " : " de ";
+			return GetRankString() + preposition + GetSuitString();
+		}
 	};
 }
 

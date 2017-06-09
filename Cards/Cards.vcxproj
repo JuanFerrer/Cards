@@ -114,6 +114,7 @@
     <ClCompile Include="src\DeckClass.cpp" />
     <ClCompile Include="src\HandClass.cpp" />
     <ClCompile Include="src\SpanishCardClass.cpp" />
+    <ClCompile Include="src\TarotCardClass.cpp" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="src\FrenchCardClass.h" />
@@ -122,6 +123,7 @@
     <ClInclude Include="src\ICardClass.h" />
     <ClInclude Include="src\include.h" />
     <ClInclude Include="src\SpanishCardClass.h" />
+    <ClInclude Include="src\TarotCardClass.h" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">

@@ -1,40 +1,42 @@
-#include "FrenchCardClass.h"
+#include "TarotCardClass.h"
 
 #include <iostream>
 #include <string>
 
-using namespace cards;
-namespace french
+namespace tarot
 {
-	Card::Card(Rank newRank, Suit newSuit)
+	TarotCard::TarotCard(Rank newRank, Suit newSuit)
 	{
-		SetSuit(newSuit);
-		SetRank(newRank);
-		SetType(CardType::French);
+		MSuit = newSuit;
+		MRank = newRank;
+		MArcana = Arcana::Minor;
 	}
 
-	Card::Card(const Card &rhs)
+
+
+	TarotCard::TarotCard(const TarotCard &rhs)
 	{
 		SetSuit(rhs.GetSuit());
 		SetRank(rhs.GetRank());
-		SetType(rhs.GetType());
+		SetTrump(rhs.GetTrump());
+		SetArcana(rhs.GetArcana());
 	}
 
-	std::string Card::GetSuitString() const
+	std::string TarotCard::GetSuitString() const
 	{
 		switch (GetSuit())
 		{
-		case Suit::Spades:
-			return "Spades";
+		case Suit::Swords:
+			return "Swords";
 			break;
-		case Suit::Clubs:
-			return "Clubs";
+		case Suit::Wands:
+			return "Wands";
 			break;
-		case Suit::Diamonds:
-			return "Diamonds";
+		case Suit::Pentacles:
+			return "Pentacles";
 			break;
-		case Suit::Hearts:
-			return "Hearts";
+		case Suit::Cups:
+			return "Cups";
 			break;
 		default:
 			return "";	// ERROR
@@ -42,12 +44,12 @@ namespace french
 		}
 	}
 
-	std::string Card::GetRankString() const
+	std::string TarotCard::GetRankString() const
 	{
 		switch (GetRank())
 		{
-		case Rank::Ace:
-			return "Ace";
+		case Rank::One:
+			return "One";
 			break;
 		case Rank::Two:
 			return "Two";
@@ -79,6 +81,9 @@ namespace french
 		case Rank::Jack:
 			return "Jack";
 			break;
+		case Rank::Knight:
+			return "Knight";
+			break;
 		case Rank::Queen:
 			return "Queen";
 			break;
@@ -90,4 +95,11 @@ namespace french
 			break;
 		}
 	}
+
+
+	std::string TarotCard::GetCardName() const
+	{
+		return std::string();
+	}
+
 }
