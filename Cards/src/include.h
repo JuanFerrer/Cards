@@ -5,5 +5,5 @@
 
 #include "SpanishCardClass.h"
 
-#endif // _INCLUDE_H_
+#endif // !_INCLUDE_H_
 

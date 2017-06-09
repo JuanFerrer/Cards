@@ -47,10 +47,10 @@
     <ClInclude Include="src\SpanishCardClass.h">
       <Filter>Header Files</Filter>
     </ClInclude>
-    <ClInclude Include="src\include.h">
+    <ClInclude Include="src\TarotCardClass.h">
       <Filter>Header Files</Filter>
     </ClInclude>
-    <ClInclude Include="src\TarotCardClass.h">
+    <ClInclude Include="src\include.h">
       <Filter>Header Files</Filter>
     </ClInclude>
   </ItemGroup>

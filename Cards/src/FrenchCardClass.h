@@ -1,6 +1,10 @@
 #ifndef _FRENCH_CARD_H_
 #define _FRENCH_CARD_H_
 
+#ifndef FRENCH_DEFINED
+#define FRENCH_DEFINED
+#endif // !FRENCH_DEFINED
+
 #include <ostream>
 #include "ICardClass.h"
 

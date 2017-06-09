@@ -1,4 +1,4 @@
-#include "./src/include.h"
+#include "./src/Include.h"
 #include "./src/DeckClass.h"
 #include "./src/HandClass.h"
 
@@ -9,7 +9,15 @@ using namespace cards;
 
 int main()
 {
-	Deck* deck = new Deck(CardType::Spanish);
+#ifdef SPANISH_DEFINED
+	CardType cardType = CardType::Spanish;
+#endif
+#ifdef FRENCH_DEFINED
+	CardType cardType = CardType::French;
+#endif
+
+
+	Deck* deck = new Deck(cardType);
 	Hand* hand = new Hand();
 
 	char optionSelected;

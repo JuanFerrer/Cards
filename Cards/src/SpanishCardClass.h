@@ -1,6 +1,11 @@
 #ifndef _SPANISH_CARD_H_
 #define _SPANISH_CARD_H_
 
+#ifndef SPANISH_DEFINED
+#define SPANISH_DEFINED
+#endif // !SPANISH_DEFINED
+
+
 #include <ostream>
 #include "ICardClass.h"
 
